@@ -1,0 +1,148 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Tech & Terrain Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome CDN for social media icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  </head>
+  
+  <body>
+      <!-- Header Section -->
+      <header>
+          <div class="header-container">
+              <!-- Logo Section -->
+              <div class="logo">
+                  <img src="images/Tech & Terrain Learning Logo.png" alt="Logo" class="logo-img">
+                  <span class="company-name">TechTerrain Learning</span>
+              </div>
+              
+              <!-- Navigation Links -->
+              <nav>
+                  <ul class="nav-links">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="courses.html">Courses</a></li>
+                      <li><a href="certificate-verification.html">Certificate Verification</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+              </nav>
+  
+              <!-- Hamburger Icon for Mobile -->
+              <div class="hamburger" onclick="toggleMenu()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+          </div>
+  
+          <!-- Mobile Menu Dropdown -->
+          <div class="mobile-menu" id="mobileMenu">
+              <a href="index.html">Home</a>
+              <a href="about.html">About Us</a>
+              <a href="courses.html">Courses</a>
+              <a href="certificate-verification.html">Certificate Verification</a>
+              <a href="contact.html">Contact Us</a>
+          </div>
+      </header>
+
+    <section class="certificate-verification">
+        <h1>Certificate Verification</h1>
+        <p>Enter your certificate ID below to verify its authenticity.</p>
+        <form>
+            <input type="text" name="certificateId" id="certificateId" placeholder="Certificate ID" required>
+            <button type="button" id="verifyButton">Verify</button>
+        </form>
+        <div id="certificateDetails"></div> <!-- Result div -->
+    </section>
+
+    <!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+    
+  
+      <!-- Contact Information -->
+      <div class="footer-contact">
+        <p><strong>Contact Us:</strong></p>
+        <p>Email: <a href="mailto:info@techterrainlearning.com">info@techterrainlearning.com</a></p>
+        <p>Phone: +1 234 567 890</p>
+        <p>Address: 123 Learning Avenue, Tech City, ABC</p>
+      </div>
+  
+      <!-- Social Media Icons -->
+      <div class="footer-social-media">
+        <a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  
+    <!-- Copyright and Legal Info -->
+    <div class="footer-bottom">
+      <p>&copy; 2024 Tech & Terrain Learning. All rights reserved.</p>
+      <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
+    </div>
+  </footer>
+
+    <!-- Include the JavaScript at the bottom of the body -->
+    <script>
+
+
+
+document.getElementById('verifyButton').addEventListener('click', function() {
+    // Get the certificate ID from the input field
+    const certificateId = document.getElementById('certificateId').value.trim();
+
+    // Check if the certificate ID is provided
+    if (certificateId) {
+        // Fetch the certificate verification API
+        fetch(`http://localhost:3000/api/certificates/verify/${certificateId}`)
+            .then(response => response.json())
+            
+            .then(data => { 
+                console.log(data);
+                if (data.valid) {
+                    // If valid, display certificate details
+                    document.getElementById('certificateDetails').innerHTML = `
+                        <h2>Certificate Found!</h2>
+                        <p><strong>Certificate ID:</strong> ${data.certificate.certificateId}</p>
+                        <p><strong>Student Name:</strong> ${data.certificate.studentName}</p>
+                        <p><strong>Course:</strong> ${data.certificate.courseName}</p>
+                        <p><strong>issueDate:</strong> ${data.certificate.issueDate}</p>
+                    `;
+                } else {
+                    // If not valid, show an error message
+                    document.getElementById('certificateDetails').innerHTML = `
+                        <h2>Certificate Not Found</h2>
+                        <p>${data.message}</p>
+                    `;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Show an error message if the request fails
+                document.getElementById('certificateDetails').innerHTML = `
+                    <h2>Error Fetching Data</h2>
+                    <p>There was an issue verifying the certificate. Please try again later.</p>
+                `;
+            });
+    } else {
+        // If no certificate ID is entered, show an error message
+        document.getElementById('certificateDetails').innerHTML = `
+            <h2>Error</h2>
+            <p>Please enter a valid certificate ID.</p>
+        `;
+    }
+});
+
+// Toggle Mobile Menu
+function toggleMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('active');
+}
+
+    </script>
+
+</body>
+</html>

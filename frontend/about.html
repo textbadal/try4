@@ -1,0 +1,131 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Tech & Terrain Learning</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Add Font Awesome CDN for social media icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="images/Tech & Terrain Learning Logo.png" alt="Logo" class="logo-img">
+                <span class="company-name">TechTerrain Learning</span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="certificate-verification.html">Certificate Verification</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger Icon for Mobile -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="courses.html">Courses</a>
+            <a href="certificate-verification.html">Certificate Verification</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </header>
+
+    <section class="about-us">
+      <h1>About Us</h1>
+      <p>Welcome to Tech & Terrain Learning, an e-learning platform dedicated to providing high-quality online education to learners worldwide. We offer a diverse range of courses tailored to enhance knowledge and skills in various fields, including civil engineering, technology, and design.</p>
+  
+      <h2>Our Mission</h2>
+      <p>Our mission is to democratize education by making it accessible to everyone, no matter where they are. We aim to empower individuals to succeed by providing them with the tools, resources, and support they need to advance in their careers and personal lives.</p>
+  
+      <h2>Our Values</h2>
+      <p>At Tech & Terrain Learning, we are guided by the following core values:</p>
+      <ul>
+          <li><strong>Excellence:</strong> We strive for the highest quality in our courses and content.</li>
+          <li><strong>Accessibility:</strong> We believe education should be available to all, no matter their background or location.</li>
+          <li><strong>Innovation:</strong> We leverage the latest technologies to create engaging and effective learning experiences.</li>
+          <li><strong>Collaboration:</strong> We work together with educators and industry experts to provide relevant, real-world knowledge.</li>
+      </ul>
+  
+      <h2>Our Team</h2>
+      <p>We are a dynamic and passionate team of educators, designers, and developers working together to deliver the best learning experience possible. Meet our team:</p>
+      
+      <div class="team">
+          <div class="team-member">
+              <img src="images/team-member1.jpg" alt="Team Member 1">
+              <h3>John Doe</h3>
+              <p>Lead Educator</p>
+              <p>John brings over 10 years of experience in civil engineering education and is passionate about helping students build a solid foundation in their careers.</p>
+          </div>
+          <div class="team-member">
+              <img src="images/team-member2.jpg" alt="Team Member 2">
+              <h3>Jane Smith</h3>
+              <p>Course Designer</p>
+              <p>Jane is a creative designer who crafts engaging, visually appealing, and easy-to-follow course materials for our students.</p>
+          </div>
+          <div class="team-member">
+              <img src="images/team-member3.jpg" alt="Team Member 3">
+              <h3>Michael Brown</h3>
+              <p>Web Developer</p>
+              <p>Michael ensures that our platform is user-friendly, fast, and accessible across all devices, providing a seamless learning experience for everyone.</p>
+          </div>
+      </div>
+      
+      <p>We believe that learning should be a continuous, engaging journey, and we are committed to helping our students reach their full potential.</p>
+  </section>
+  
+
+   <!-- Footer Section -->
+<footer>
+  <div class="footer-container">
+  
+
+    <!-- Contact Information -->
+    <div class="footer-contact">
+      <p><strong>Contact Us:</strong></p>
+      <p>Email: <a href="mailto:info@techterrainlearning.com">info@techterrainlearning.com</a></p>
+      <p>Phone: +1 234 567 890</p>
+      <p>Address: 123 Learning Avenue, Tech City, ABC</p>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="footer-social-media">
+      <a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <!-- Copyright and Legal Info -->
+  <div class="footer-bottom">
+    <p>&copy; 2024 Tech & Terrain Learning. All rights reserved.</p>
+    <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script>
+  // Toggle Mobile Menu
+function toggleMenu() {
+const mobileMenu = document.getElementById('mobileMenu');
+mobileMenu.classList.toggle('active');
+}
+
+</script>
+</body>
+</html>
