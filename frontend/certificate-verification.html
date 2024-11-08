@@ -97,7 +97,7 @@ document.getElementById('verifyButton').addEventListener('click', function() {
     // Check if the certificate ID is provided
     if (certificateId) {
         // Fetch the certificate verification API
-        fetch(`http://localhost:3000/api/certificates/verify/${certificateId}`)
+        fetch(`https://interncourse-backend.onrender.com/api/certificates/verify/${certificateId}`)
             .then(response => response.json())
             
             .then(data => { 
